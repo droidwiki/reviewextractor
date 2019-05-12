@@ -1,0 +1,32 @@
+resources:
+  - name: git-source
+    type: git
+    source:
+      uri: https://github.com/droidwiki/reviewextractor.git
+
+jobs:
+  - name: build
+    plan:
+      - get: git-source
+      - task: build
+        config:
+          platform: linux
+          image_resource:
+            type: docker-image
+            source:
+              repository: java
+              tag: 8-alpine
+          inputs:
+            - name: git-source
+          caches:
+            - path: home-gradle-caches
+          run:
+            path: sh
+            args:
+              - -exc
+              - |
+                rm -rf $HOME/.gradle
+                ln -s $PWD/home-gradle-caches $HOME/.gradle
+
+                cd git-source
+                ./gradlew build
