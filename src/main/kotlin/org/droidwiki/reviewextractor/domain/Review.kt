@@ -2,8 +2,9 @@ package org.droidwiki.reviewextractor.domain
 
 import java.math.BigDecimal
 import java.math.RoundingMode
+import java.net.URL
 
-data class Review(private val ratingValue: Number, val bestRating: Number) {
+data class Review(private val ratingValue: Number, val bestRating: Number, var referenceUrl: URL? = null) {
     fun ratingValue(): Number {
         return when(bestRating.toDouble()) {
             5.0 -> this.ratingValue.toDouble() * 2

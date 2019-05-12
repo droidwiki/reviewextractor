@@ -1,0 +1,4 @@
+wikibase:
+  apiUrl: https://data.droidwiki.org/w/api.php
+  reviewProperty: P75
+  ratingValueProperty: P76

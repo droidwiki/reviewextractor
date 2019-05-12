@@ -1,4 +1,4 @@
-package org.droidwiki.reviewextractor
+package org.droidwiki.reviewextractor.adapter
 
 import org.droidwiki.reviewextractor.adapter.UrlReviewFetcher
 import org.junit.jupiter.api.Assertions.assertEquals
