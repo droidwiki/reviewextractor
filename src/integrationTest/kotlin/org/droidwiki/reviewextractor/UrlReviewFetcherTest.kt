@@ -63,4 +63,11 @@ class UrlReviewFetcherTest {
 
         assertEquals(9.6, review.ratingValue())
     }
+
+    @Test
+    fun `extracts review from computerbild-de`() {
+        val review = urlReviewFetcher.fetch(URL("https://www.computerbild.de/artikel/cb-Tests-Handy-Google-Pixel-3-im-Test-Spitzenmodell-22538541.html"))
+
+        assertEquals(7.5, review.ratingValue())
+    }
 }
