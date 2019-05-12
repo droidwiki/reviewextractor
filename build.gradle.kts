@@ -67,9 +67,6 @@ tasks {
 
     withType<Test>().configureEach {
         useJUnitPlatform()
-        testLogging {
-            events("PASSED", "STARTED", "FAILED", "SKIPPED")
-        }
     }
 
     "check" {
