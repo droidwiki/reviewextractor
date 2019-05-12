@@ -8,6 +8,7 @@ jobs:
   - name: build
     plan:
       - get: git-source
+        trigger: true
       - task: build
         config:
           platform: linux
